@@ -7,8 +7,8 @@ import seaborn as sns
 st.header('Welcome! Bike Rentals')
 
 # Load data
-day_df = pd.read_csv("day_data.csv")
-hour_df = pd.read_csv("hour_data.csv")
+day_df = pd.read_csv("../day_data.csv")
+hour_df = pd.read_csv("../hour_data.csv")
 
 with st.sidebar:
     # Menambahkan logo perusahaan
