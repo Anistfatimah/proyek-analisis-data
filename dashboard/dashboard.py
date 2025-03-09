@@ -32,6 +32,15 @@ plt.ylabel("Jumlah Peminjaman")
 plt.title(f"Tren Peminjaman Sepeda per Jam pada {selected_season}")
 st.pyplot(plt)
 
+st.markdown(
+    """
+    Setelah mengetahui peminjaman setiap jam berdasarkan musim, dapat melihat jumlah peminjaman sepeda meningkat 
+    pada jam-jam sibuk, seperti pagi (sekitar jam 7-9) dan sore (sekitar jam 17-19), ketika orang bepergian untuk bekerja 
+    atau pulang kerja.
+    """
+    )
+    
+
 # Grafik perbandingan paling banyak dan paling sedikit peminjaman sepeda per musim
 season_avg = day_df.groupby("season")["cnt"].mean().reset_index()
 season_avg["season"] = season_avg["season"].map(season_dict)
@@ -43,3 +52,10 @@ plt.xlabel("Musim")
 plt.ylabel("Rata-rata Peminjaman Sepeda")
 plt.title("Perbandingan Peminjaman Sepeda per Musim")
 st.pyplot(plt)
+
+st.markdown(
+    """
+    Musim Panas atau Musim Gugur memiliki jumlah peminjaman tertinggi, ini menunjukkan bahwa cuaca hangat 
+    dan kering lebih mendukung aktivitas bersepeda. Jika ada penurunan signifikan pada musim tertentu, misalnya di Musim Dingin, ini bisa dikaitkan dengan faktor cuaca buruk yang mengurangi jumlah pengguna sepeda.
+    """
+)
