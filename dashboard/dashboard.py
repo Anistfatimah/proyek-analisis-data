@@ -2,16 +2,13 @@ import streamlit as st
 import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
 
 # Header
 st.header('Welcome! Bike Rentals')
 
 # Load data
-file_path_day = os.path.abspath("dashboard/day_data.csv")
-d_df = pd.read_csv(file_path_day)
-file_path_hour = os.path.abspath("dashboard/hour_data.csv")
-h_df = pd.read_csv(file_path_hour)
+d_df = pd.read_csv("https://github.com/Anistfatimah/proyek-analisis-data/blob/19428e84d2a0a81a87ae98464d9c082999fd8a50/dashboard/day_data.csv")
+h_df = pd.read_csv("https://github.com/Anistfatimah/proyek-analisis-data/blob/19428e84d2a0a81a87ae98464d9c082999fd8a50/dashboard/hour_data.csv")
 
 with st.sidebar:
     # Menambahkan logo perusahaan
