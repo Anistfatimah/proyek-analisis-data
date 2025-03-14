@@ -2,17 +2,20 @@ import streamlit as st
 import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Header
 st.header('Welcome! Bike Rentals')
 
 # Load data
-d_df = pd.read_csv("day_data.csv")
-h_df = pd.read_csv("hour_data.csv")
+file_path_day = os.path.abspath("dashboard/day_data.csv")
+d_df = pd.read_csv(file_path_day)
+file_path_hour = os.path.abspath("dashboard/hour_data.csv")
+h_df = pd.read_csv(file_path_hour)
 
 with st.sidebar:
     # Menambahkan logo perusahaan
-    st.image("sole-bicycles-unsplash.jpg")
+    st.image("dashboard/sole-bicycles-unsplash.jpg")
     # Selectbox memilih musim
     season_dict = {1: "Musim Panas", 2: "Musim Semi", 3: "Musim Gugur", 4: "Musim Dingin"}
     st.sidebar.title("Filter Data")
