@@ -13,7 +13,7 @@ hour_df = os.path.join(os.path.dirname(__file__), "hour_data.csv")
 
 with st.sidebar:
     # Menambahkan logo perusahaan
-    st.image("sole-bicycles-unsplash.jpg")
+    st.image("dashboard/sole-bicycles-unsplash.jpg")
     # Selectbox memilih musim
     season_dict = {1: "Musim Panas", 2: "Musim Semi", 3: "Musim Gugur", 4: "Musim Dingin"}
     st.sidebar.title("Filter Data")
