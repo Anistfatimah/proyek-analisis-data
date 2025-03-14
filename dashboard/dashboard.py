@@ -7,9 +7,16 @@ import seaborn as sns
 st.header('Welcome! Bike Rentals')
 
 # Load data
-d_df = pd.read_csv("https://github.com/Anistfatimah/proyek-analisis-data/blob/19428e84d2a0a81a87ae98464d9c082999fd8a50/dashboard/day_data.csv")
-h_df = pd.read_csv("https://github.com/Anistfatimah/proyek-analisis-data/blob/19428e84d2a0a81a87ae98464d9c082999fd8a50/dashboard/hour_data.csv")
+d_df= os.path.join(os.path.dirname(__file__), "day_data.csv")
+h_df= os.path.join(os.path.dirname(__file__), "hour_data.csv")
 
+# Cek apakah file ada sebelum membaca
+if not os.path.exists(d_df) or not os.path.exists(h_df):
+    st.error("File CSV tidak ditemukan. Pastikan file day_data.csv dan hour_data.csv ada di direktori yang benar.")
+else:
+    d_df = pd.read_csv(d_df)
+    h_df = pd.read_csv(h_df)
+    
 with st.sidebar:
     # Menambahkan logo perusahaan
     st.image("dashboard/sole-bicycles-unsplash.jpg")
